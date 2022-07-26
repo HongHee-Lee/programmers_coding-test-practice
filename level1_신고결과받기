@@ -45,3 +45,8 @@ print(a)
 리스트에서 요소의 인덱스 추출하기
 a=animals.index('dog')
 """
+
+
+#----------------------------------------------------------
+#모범 코드 링크
+#https://school.programmers.co.kr/learn/courses/30/lessons/92334/solution_groups?language=python3
