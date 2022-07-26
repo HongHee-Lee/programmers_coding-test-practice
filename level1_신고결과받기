@@ -1,0 +1,44 @@
+"""
+id_list=["muzi", "frodo", "apeach", "neo"]
+report=["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
+k=2
+"""
+#틀림. 오답노트 필요
+
+def solution(id_list, report, k):
+    answer = [0]*len(id_list)
+    charged=[0]*len(id_list)
+    for a in report:
+        a1, a2=a.split()
+    
+        for b in id_list:
+            if a1==b:
+                idx=id_list.index(a2)
+                charged[idx]+=1
+    
+    for i in range(len(id_list)):
+        if charged[i]==k:
+            char=id_list[i]
+            
+            for a in report:
+                a1,a2=a.split()
+                idx=id_list.index(a1)
+                if a2==char:
+                    answer[idx]+=1
+    
+    return answer
+
+#print(solution(["muzi", "frodo", "apeach", "neo"],["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"],2))
+
+print(solution(["con", "ryan"],["ryan con", "ryan con", "ryan con", "ryan con"],3))
+
+
+"""
+10의 길이를 가진 배열 생성하기
+a=[]*10
+print(a)
+
+
+리스트에서 요소의 인덱스 추출하기
+a=animals.index('dog')
+"""
