@@ -49,3 +49,52 @@ def solution(lottos, win_nums):
 #14번째 테스트에서 틀림. 
 #하나라도 틀렸다는 말은 조건 정해줄때 뭔가 세밀하지 못했다는 소리.
 #뭔가 조건 줄때 조건이 잘못되었다는 소리
+
+#---------------------------최종 정답---------------------------------
+def solution(lottos, win_nums):
+    answer = []
+    zero_count=0
+    for a in lottos:
+        if a==0: zero_count+=1          #0의 개수 구하기
+    
+    for i in range(zero_count):
+        lottos.remove(0)                #lottos2=lottos.remove(0) 처럼 쓰지 말기!!!
+                                        #lottos.remove(0)으로 코드 끝!!
+    
+    count2=0
+    for a in lottos:
+        for b in win_nums:
+            if a==b: count2+=1
+    
+    if count2 ==0 and zero_count==6:
+        answer.append(6)
+        answer.insert(0,1)
+    elif count2==0 and zero_count==5:
+        answer.append(6)
+        answer.insert(0,2)
+        
+    elif count2==1 and zero_count==5:
+        answer.append(6)
+        answer.insert(0,1)
+    elif count2==1 and zero_count==4:
+        answer.append(6)
+        answer.insert(0,2)
+    
+    elif count2==0 and (zero_count==0 or zero_count==1):       #여기이하 7째줄 추가 하니 정답처리 
+        answer.append(6)
+        answer.insert(0,6)
+    
+    elif count2==0 and (zero_count==2 or zero_count==3 or zero_count==4):
+        answer.append(6)
+        answer.insert(0,7-count2-zero_count)
+    else:
+        answer.append(7-count2)
+        answer.insert(0,7-count2-zero_count)
+        
+    return answer
+
+#print(solution([44,1,0,0, 31, 25],[31,10,45,1,6,19]))
+
+#print(solution([0,0,0,0,0,0],[38,19,20,40,15,25]))
+
+#print(solution([45,4,35,20,3,9],[20,9,3,45,4,35]))
