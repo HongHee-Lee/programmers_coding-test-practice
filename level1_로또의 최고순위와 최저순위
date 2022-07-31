@@ -98,3 +98,9 @@ def solution(lottos, win_nums):
 #print(solution([0,0,0,0,0,0],[38,19,20,40,15,25]))
 
 #print(solution([45,4,35,20,3,9],[20,9,3,45,4,35]))
+
+
+
+
+#모범코드 링크
+#https://school.programmers.co.kr/learn/courses/30/lessons/77484/solution_groups?language=python3
